@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mike Laubscher</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on Mike Laubscher</description>
+    <title>Posts on Mike Laubscher</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on Mike Laubscher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <managingEditor>mikelaubscher@gmail.com (Mike Laubscher)</managingEditor>
     <webMaster>mikelaubscher@gmail.com (Mike Laubscher)</webMaster>
     <copyright>© 2026 Mike Laubscher</copyright>
-    <lastBuildDate>Tue, 19 May 2026 20:00:58 +0200</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 May 2026 20:00:58 +0200</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Rain Guage Truth</title>
