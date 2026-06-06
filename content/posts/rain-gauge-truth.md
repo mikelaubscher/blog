@@ -1,6 +1,6 @@
 +++
 date = '2026-05-19T20:00:58+02:00'
-draft = true
+draft = false
 title = 'Rain Gauge Truth'
 +++
 
