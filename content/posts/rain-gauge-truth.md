@@ -26,59 +26,68 @@ Why do we measure rainfall in millimeters anyway? In a given area, it's the heig
 
 ![Rain gauge with condom container](/rain-gauge-truth-condom.webp)
 
-Whether your rain gauge is a cylinder, a cone, or an irregular decorative bottle, a rainfall of \(R\) millimeters means that a volume of water equal to \(R\text{ mm}\) times the top aperture area (\(A_{\text{top}}\)) has entered the gauge. The gauge's graduation marks already account for its conical volume. 
-
-Therefore, to test if your gauge is accurate, you only need to:
-1. Measure the diameter of the top opening.
-2. Calculate the expected volume for a specific rainfall level (e.g., \(10\text{ mm}\), \(20\text{ mm}\)).
-3. Measure and pour that precise volume of water into the gauge and see if it aligns with the mark.
-
----
-
-### What You Need
-
-* **Your rain gauge** (clean and dry).
-* **A ruler or caliper** (to measure in centimeters).
-* **A digital kitchen scale** (highly recommended for precision, measuring in grams).
-* **Water** (at room temperature).
-* **A calculator**.
+Whether your rain gauge is a cylinder, a cone, or ...the above, a rainfall of \(R\) millimeters means that a volume of water equal to \(R\text{ mm}\) times the top aperture area (\(A_{\text{top}}\)) has entered the gauge. 
 
 > [!TIP]
-> Why a kitchen scale? In the metric system, **\(1\text{ milliliter (mL)}\) of water weighs exactly \(1\text{ gram}\)**. Measuring volume with a kitchen scale is far more precise than trying to read a plastic measuring jug.
+> For the sake of accuracy, let's use a kitchen scale. In the metric system, **\(1\text{ milliliter (mL)}\) of water weighs exactly \(1\text{ gram}\)**. Measuring volume with a kitchen scale is far more precise than trying to read a plastic measuring jug.
+
+Therefore, to test if your gauge is accurate, you need to:
+1. Measure the diameter (\(D\text{ mm}\)) of the top opening, maybe in 2 directions for an average in case it's not symmetrical. Then the radius is \(R = \frac{D}{2}\)
+2. Fill your gauge to a marked level (e.g., \(10\text{ mm}\), \(20\text{ mm}\)).
+3. Pour the contents of your gauge into a waiting container on a zeroed kitchen scale and record the mass in grams.
 
 ---
 
-### The Metric Formulas
+### The Calculations
 
-#### 1. Measure the Top Inner Diameter (\(D\))
-Measure the **internal diameter** of the top opening of your gauge in centimeters (\(\text{cm}\)). Do not include the thickness of the plastic rim. If the opening is slightly oval-shaped, measure it in two different directions and take the average.
+We'll be using the formula for the volume of a cylinder (volume = base area x height):
 
-#### 2. Calculate the Calibration Volume (\(V\))
-To test a target rainfall reading of \(R\) millimeters, the required water volume \(V\) (in milliliters or grams) is:
+$$V = (\pi \times R^2) \times H$$
 
-$$V = \frac{\pi \times D^2 \times R}{40}$$
+This answer will be in cubic millimeters. 1 millilitre = 1000 cubic millilitres so,
 
-Or, using a simplified decimal approximation:
+$$V(\text{mL}) = V(\text{mm}^3) / 1000$$
 
-$$V \approx 0.07854 \times D^2 \times R$$
+Our go to formula can thus become:
+
+$$V = \frac{(\pi \times R^2) \times H}{1000}$$
+
+And, for millimeters:
+
+$$H = \frac{V \times 1000}{\pi \times R^2}$$
 
 Where:
-* \(V\) = Volume of water needed in **milliliters (mL)** (which equals **grams** on your scale).
-* \(D\) = Inner diameter of the top opening in **centimeters (cm)**.
-* \(R\) = The target rainfall reading you want to test in **millimeters (mm)**.
+
+* \(V\) = volume in **millilitres (ml)**
+* \(R\) = radius in **millimeters (mm)**
+* \(H\) = height in **millimeters (mm)**
 
 ---
 
-### Step-by-Step Testing Procedure
+### Let's crack on with an example
 
-1. **Pick your test points:** Choose 3 or 4 points on the gauge scale to test (e.g., \(5\text{ mm}\), \(15\text{ mm}\), and \(30\text{ mm}\)).
-2. **Calculate the water mass:** Run the formula for each test point. Let's do a quick example:
-   * *Example:* If your gauge's top inner diameter (\(D\)) is \(10\text{ cm}\), and you want to test the \(15\text{ mm}\) mark (\(R = 15\)):
-     $$V = 0.07854 \times 10^2 \times 15 = 117.81\text{ mL}$$
-     You need exactly **\(117.8\text{ grams}\)** of water.
-3. **Weigh the water:** Place a dry container on your kitchen scale, tare/zero the scale, and pour water in until the weight matches your calculated value (\(V\) grams).
-4. **Pour and check:** Slow and steady, pour the water into your dry rain gauge. Make sure the gauge is standing perfectly level on a flat surface.
-5. **Verify the reading:** Check the level of the water against the graduation marks on the gauge:
-   * If it lines up perfectly with your target \(R\) value, that section of the scale is highly accurate.
-   * If it reads higher or lower, your gauge is over-reporting or under-reporting.
-6. **Repeat:** Empty and dry the gauge, then repeat the process for your other test points to verify accuracy across the entire scale.
+
+My test went as follows: I filled my gauge to it's markings of 5, 10, 14 and 30 millimeters, pouring the contents at each into a container zeroed on a scale. The mass from each level was recorded and the numbers were crunched using our go to formula for \(H\) (millimeters).
+
+My gauge opening has a diameter of 129mm and thus a radius of 64.5mm.
+
+At my gauge's 10mm mark I got, coincidentally, 100g on the scale. So, the true reading in millimeters is: 
+
+$$H = \frac{100 \times 1000}{3.14159 \times 64.5^2} = 7.65\text{mm}$$
+
+Oh dear! That's a 31% error. The results for all my measurements were as follows:
+
+| Gauge (mm) | Volume (ml) | True Reading (mm) | Error (%) |
+| :---:      | :---:       | :---:             | :---:     |
+| 5          | 47          | 3.60              | 39        |
+| 10         | 100         | 7.65              | 31        |
+| 14         | 140         | 10.71             | 31        |
+| 20         | 206         | 15.76             | 27        |
+
+### Conclusion
+
+Our gauges are not accurate. Far from it in fact. Maybe there's an accepted error for typical household gauges, but from what I could find, these errors might be around the 5% mark, accounting for gauge placement and wind.
+
+What are we going to about this? Using the above formula, we can mark out true levels on our gauges and sleep easily once again.
+
+Happy rain watching folks!
